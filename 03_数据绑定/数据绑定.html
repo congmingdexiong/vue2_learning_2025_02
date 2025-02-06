@@ -8,20 +8,15 @@
   </head>
   <body>
     <div id="root">
-      <h1>插值语法</h1>
-      <h3>{{ message }}</h3>
-      <hr />
-      <h1>指令语法</h1>
-      <a :href="link">点我去baidu</a>
-      <!-- <a :href="link.toUpperCase()">点我去baidu</a> -->
+      <h1>{{name}}</h1>
+      <h2>单向数据绑定 <input type="text" v-model="name" /></h2>
     </div>
     <script type="text/javascript">
       Vue.config.productionTip = false;
       var app = new Vue({
         el: "#root",
         data: {
-          message: "Hello Vue!",
-          link: "http://www.baidu.com",
+          name: "Allen",
         },
       });
     </script>

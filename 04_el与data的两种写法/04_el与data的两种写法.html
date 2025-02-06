@@ -3,25 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>初始vue</title>
+    <title>04_el与data的两种写法</title>
     <script type="text/javascript" src="../js/vue.js"></script>
   </head>
   <body>
     <div id="root">
-      <h1>插值语法</h1>
-      <h3>{{ message }}</h3>
-      <hr />
-      <h1>指令语法</h1>
-      <a :href="link">点我去baidu</a>
-      <!-- <a :href="link.toUpperCase()">点我去baidu</a> -->
+      <h1>{{name}}</h1>
     </div>
     <script type="text/javascript">
       Vue.config.productionTip = false;
+      // var app = new Vue({
+      //   data: {
+      //     name: "Allen",
+      //   },
+      // });
+      // app.$mount("#root");
+
       var app = new Vue({
         el: "#root",
-        data: {
-          message: "Hello Vue!",
-          link: "http://www.baidu.com",
+        data: function () {
+          return {
+            name: "Allen",
+          };
         },
       });
     </script>
