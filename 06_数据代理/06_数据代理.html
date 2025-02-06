@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04_el与data的两种写法</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">看控制台</div>
+    <script type="text/javascript">
+      Vue.config.productionTip = false;
+
+      let number = 8;
+      let person = {
+        name: "Allen",
+        age: 18,
+      };
+      Object.defineProperty(person, "age", {
+        get() {
+          console.log("有人读取了age");
+          return age;
+        },
+        set(value) {
+          console.log("有人设置了age");
+          age = value;
+        },
+      });
+
+      person.age = 20;
+    </script>
+  </body>
+</html>
