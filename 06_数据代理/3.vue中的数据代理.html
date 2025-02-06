@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04_el与data的两种写法</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <h1>学校 : {{school}}</h1>
+      <h1>学校地址: {{学校地址}}</h1>
+    </div>
+    <script type="text/javascript">
+      Vue.config.productionTip = false;
+      let data = { school: "尚硅谷", 学校地址: "北京" };
+      // vue把实际的数据放在_data中，然后通过getter和setter代理_data中的数据;
+      //   如果有人想要读school值通过getter读data中的school值;
+      //   如果有人想改school值通过setter改data中的school值;
+      const vm = new Vue({
+        el: "#root",
+        data,
+      });
+      console.log(vm._data === data);
+    </script>
+  </body>
+</html>
